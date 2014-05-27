@@ -1,0 +1,15 @@
+{
+    "title": "Disqus",
+    "version": "1.00",
+    "name": "Disqus",
+    "description": "Discussions using Disqus (http://bit.ly/1kGGOlG).",
+    "author": "ImpressPages",
+    "options": [
+        {
+            "label": "Disqus shortname",
+            "name": "shortname",
+            "type": "text",
+            "default": ""
+        }
+    ]
+}
