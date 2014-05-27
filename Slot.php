@@ -33,9 +33,4 @@ class Slot
         }
     }
 
-    public static function Disqus_count()
-    {
-
-        return self::getDisqusView('count');
-    }
 }

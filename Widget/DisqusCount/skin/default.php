@@ -1,1 +1,0 @@
-<?php echo ipSlot('Disqus_count'); ?>
