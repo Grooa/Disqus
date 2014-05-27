@@ -8,20 +8,34 @@
 
 namespace Plugin\Disqus;
 
-class Slot{
+class Slot
+{
 
-    public static function Disqus(){
+    public static function Disqus()
+    {
+
+        return self::getDisqusView('discussion');
+    }
+
+    private static function getDisqusView($view)
+    {
 
         $shortname = Model::getDisqusShortName();
 
-        if ($shortname){
+        if ($shortname) {
             $data['shortname'] = $shortname;
-            return ipView('view/login.php', $data)->render();
-        }else{
-            if (ipIsManagementState()){
+            return ipView('view/' . $view . '.php', $data)->render();
+        } else {
+            if (ipIsManagementState()) {
                 return ipView('view/error.php')->render();
             }
             return false;
         }
+    }
+
+    public static function Disqus_count()
+    {
+
+        return self::getDisqusView('count');
     }
 }
