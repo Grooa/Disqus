@@ -23,7 +23,11 @@ class Slot
         $shortname = Model::getDisqusShortName();
 
         if ($shortname) {
-            $data['shortname'] = $shortname;
+                $data = array(
+                    'shortname' => $shortname,
+                    'page' => ipContent()->getCurrentPage()
+                );
+
             return ipView('view/' . $view . '.php', $data)->render();
         } else {
             if (ipIsManagementState()) {
